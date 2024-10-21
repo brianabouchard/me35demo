@@ -84,7 +84,7 @@ class DockActionClient(Node):
 
         # Print the result to the logger. We know what to ask for 'result.is_docked'
         # based on the action documentation for the dock action
-        self.get_logger().info('Result: {0}'.format(result.is_docked))
+        self.get_logger().info('Final Docking Status: {0}'.format(result.is_docked))
 
         # Shut down rclpy
         rclpy.shutdown()
@@ -97,7 +97,7 @@ class DockActionClient(Node):
         feedback = feedback_msg.feedback
 
         # Print to the logger the messages received on the feedback topic
-        self.get_logger().info('Received feedback: {0}'.format(feedback.sees_dock))
+        self.get_logger().info('Robot Sees Dock Status: {0}'.format(feedback.sees_dock))
 
 def main(args=None):
     # Initialize the rclpy library
